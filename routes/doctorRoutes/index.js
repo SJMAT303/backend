@@ -1,4 +1,5 @@
 import express from "express";
+import Doctor from "../../db/models/doctorSchema";
 
 const router = express.Router();
 
