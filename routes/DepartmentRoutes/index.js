@@ -1,5 +1,6 @@
 import express from "express";
 import Department from "../../db/models/departmentSchema.js";
+import checkTokens from "../../middlewares/checktoken.js";
 
 const router = express.Router();
 
@@ -9,7 +10,7 @@ router.post("/", async (req, res) => {
   res.status(201).json({ message: "Department added Successfully" });
 });
 
-router.get("/", async (req, res) => {
+router.get("/", checkTokens, async (req, res) => {
   const departments = await Department.find();
   res.status(200).json(departments);
 });
