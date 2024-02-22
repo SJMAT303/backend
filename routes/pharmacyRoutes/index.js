@@ -3,18 +3,20 @@ import Pharmacy from "../../db/models/pharmacySchema.js";
 
 const router = express.Router();
 
+//add
 router.post("/pharmacy", async (req, res) => {
   const body = { ...req.body };
   await Pharmacy.create(body);
   res.status(201).json({ message: "Medicine added Successfully" });
 });
 
+//list
 router.get("/pharmacy", async (req, res) => {
   const medicines = await Pharmacy.find();
   res.status(200).json(medicines);
 });
-``;
 
+//list by id
 router.get("/pharmacy/:id", async (req, res) => {
   const { id } = req.params;
   const medicine = await Pharmacy.find(id);

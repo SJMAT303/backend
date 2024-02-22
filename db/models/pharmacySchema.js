@@ -6,12 +6,6 @@ const pharmacySchema = Schema({
     required: true,
     trim: true,
   },
-  //   code: {
-  //     type: String,
-  //     required: true,
-  //     unique: true,
-  //     trim: true,
-  //   },
   brand: {
     type: String,
     required: true,

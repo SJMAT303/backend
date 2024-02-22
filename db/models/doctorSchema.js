@@ -23,7 +23,7 @@ const doctorSchema = Schema(
       required: true,
       trim: true,
     },
-    depatment: {
+    department: {
       type: Schema.Types.ObjectId,
       ref: "Department",
     },
